@@ -1,0 +1,14 @@
+<section>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-1">
+      <div id="form-container" class="well">
+          <%= bootstrap_form_tag url: '' do |f| %>
+            <h2>Sign In</h2>
+            <%= f.email_field :email, value: 'name@example.com' %>
+            <%= f.password_field :password %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</section>

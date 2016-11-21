@@ -1,0 +1,15 @@
+<section>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-1">
+      <div id="form-container" class="well">
+          <%= bootstrap_form_for @business do |f| %>
+            <h2>Register a business</h2>
+            <%= f.text_field :name %>
+            <%= f.text_area :description, rows: 5 %>
+            <%= f.text_field :city %>
+            <%= f.submit "Submit", class: "btn btn-success" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</section>

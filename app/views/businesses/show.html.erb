@@ -1,0 +1,27 @@
+<div class="main">
+  <%= render 'shared/business_profile', business: @business %>
+  <% if logged_in? and @business.has_no_review_by?(current_user) %>
+    <section id="review-form" class="container">
+      <div class="row">
+        <div class="col-md-4 col-offset-1">
+          <%= bootstrap_form_for [@business, @review] do |f| %>
+            <fieldset>
+                <%= f.select :rating,  options_for_select([5, 4, 3, 2, 1].map { |n| pluralize(n, "Star")}), { class: "selectpicker", control_col: "col-md-2" } %>
+                <%= f.text_area :body, label: "Write your review", rows: 6 %>
+              <%= f.submit "Submit", class: "btn btn-success" %>
+            </fieldset>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+  <h3>Reviews</h3>
+  <ul>
+    <% @business.reviews.each do |review| %>
+      <li>
+        <%= render 'shared/review', review: review %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= render 'shared/content_header', content: "Recent Reviews" %>
+      <ol>
+        <% Review.recent_reviews.each do |review| %>
+          <li>
+            <%= render 'shared/review', review: review %>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+  </div>
+</div>

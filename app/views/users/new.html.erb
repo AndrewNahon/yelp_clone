@@ -1,0 +1,16 @@
+<section>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-1">
+      <div id="form-container" class="well">
+          <%= bootstrap_form_for  @user do |f| %>
+            <h2>Register</h2>
+            <%= f.text_field :username %>
+            <%= f.email_field :email, placeholder: 'name@example.com' %>
+            <%= f.text_area :about, label: "Write something about yourself.", rows: 6  %>
+            <%= f.password_field :password %>
+            <%= f.submit "Register", class: "btn btn-success" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<nav id="main-header" class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to "Welp", root_path, class: "navbar-brand" %>
+      <ul class="nav navbar-nav">
+        <li class="btn navbar-btn btn-lg"><%= link_to "Businesses", businesses_path %></li>
+        <li class="btn navbar-btn btn-lg"><%= link_to "Recent Reviews", recent_reviews_path %></li>
+        <% if logged_in? %>
+          <li class="btn navbar-btn btn-lg"><%= link_to "Register a business", new_business_path %></li>
+        <% else logged_in? %>
+          <li class="btn navbar-btn btn-lg"><%= link_to "Sign in", sign_in_path %></li>
+          <li class="btn navbar-btn btn-lg"><%= link_to "Register", new_user_path %></li>
+        <% end %>
+        
+      </ul>
+      
+    </div>
+    <% if logged_in? %>
+      <div class="pull-right btn btn-lg"> 
+        Hello! <%= current_user.username %>
+        <p><%= link_to 'Log out', sign_out_path %></p>
+      </div>
+      <% end %>
+  </div>
+</nav>

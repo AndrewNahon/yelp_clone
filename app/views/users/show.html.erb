@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-offset-3">
+      <div id="user-profile">
+        <img src="http://placehold.it/150x150"/>
+        <h4><%= @user.username %></h4>
+        <p>
+          <%= @user.about %>
+        </p>
+      </div>
+      <h4>Reviews</h4>
+      <ul>
+        <% @user.reviews.each do |review| %>
+          <%= render 'shared/review', review: review %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

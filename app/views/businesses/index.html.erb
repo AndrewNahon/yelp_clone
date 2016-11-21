@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <%= render 'shared/content_header', content: "Businesses" %>
+      <ul>
+        <% @businesses.each do |business| %>
+          <li>
+            <div class="well">
+              <%= render 'shared/business_profile', business: business %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

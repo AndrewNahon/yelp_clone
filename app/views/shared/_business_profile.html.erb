@@ -1,0 +1,5 @@
+<h2><%= link_to business.name, business_path(business) %></h2>
+  <% if business.has_been_reviewed? %>
+    <p><strong> <%= business.rating %>/5 Stars <span>(<%= business.reviews.count %> Reviews)</span></strong></p>
+  <% end %>
+<p><%= business.description %></p>
